@@ -93,6 +93,10 @@ footer img:hover {
     position: absolute;
     bottom: 0;
     right: 0;
-    transition: all .7s ease;
+    transition: all .7s ease-in-out;
     z-index: 1;
+}
+
+#zone {
+padding-top: 4rem;
 }

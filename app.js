@@ -3,7 +3,9 @@ const hours = document.querySelector('.hours');
 const Mins = document.querySelector('.Mins');
 const secs = document.querySelector('.secs');
 const day = document.querySelector('.day');
+const zone = document.querySelector('#zone');
 let timezone = "AM";
+
 
 
 // Assigning Time to Div
@@ -15,10 +17,13 @@ let NewTime = setInterval(function clock() {
 
     hourTime = parseInt(hourTime);
 
-    //showing 12 hours mode function
-    (hourTime >= 12) ? hourTime = hourTime - 12: console.log(hourTime);
+    //Timezone function
     (hourTime >= 12) ? timezone = "PM": timezone = "AM";
+    zone.textContent = timezone;
 
+
+    //showing 12 hours mode function
+    (hourTime > 12) ? hourTime = hourTime - 12: console.log(hourTime);
 
     // showing  Double Hour Mode functions
     if (hourTime < 10) hourTime = `0${hourTime}`;
@@ -31,4 +36,4 @@ let NewTime = setInterval(function clock() {
     hours.textContent = hourTime;
     Mins.textContent = minTime;
     secs.textContent = secTime;
-}, 1000);
+}, 1);
